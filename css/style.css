@@ -8,23 +8,83 @@
 	float: left;
 	clear: left;
 }
+.item{
+	display: inline-block;
+	float: left;
+	margin: 3px 10px;
+}
 .stat{
 	display: inline-block;
 	float: left;
 	clear: left;
 }
+
 #monitor{
-	clear: left;
-	padding: 5px;
-	margin-top: 10px;
-	border:1px solid #D7D7D7;
-	background:linear-gradient(to top, #DFDFDF 0px, #F5F5F5 30%, #fff 60%) no-repeat;
+clear: left;
+padding: 5px;
+margin-top: 10px;
+border: 1px solid #D7D7D7;
+background: linear-gradient(to top, #ECEDE8 0px, #EFF5DD 50%, #F2F2E4 80%) no-repeat;
 }
+
 #story{
-	width: 50%;
-	max-height: 250px;
-	overflow-y: scroll; 
+        display: inline-block;
+	max-height: 350px;
+	overflow-y: auto; 
+        padding: 10px;
 }
+
+.story-item {
+    font-family: calibri;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.story-item.system{
+    line-height: 16px;
+    font-size: 16px;
+    padding: 0px;
+}
+.story-item.turnheader{
+    margin-top: 10px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px #ccc solid;
+    border-width: 1px 1px 0px 1px;
+    border-radius: 10px 10px 0px 0px;
+    color: #A85F19;
+    text-shadow: 0px 1px 0px #fff;
+    background: linear-gradient(to top, #FFFFFF 0px, #DBDBAE 15%, #FFFFFF 100%) no-repeat;
+}
+.story-item.tell{
+    border: 1px #ccc solid;
+    border-width: 0px 1px 0px 1px;
+    background: #FFFFFF;
+}
+.story-item.get{
+}
+.story-item.loose{
+}
+.story-item.npc{
+    border: 1px #ccc solid;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0px 0px 10px 10px;
+    background: linear-gradient(to top, #FFFFFF 0px, #eee 15%, #FFFFFF 100%) no-repeat;
+    padding-bottom: 20px;
+}
+.story-item.damage{
+    border: 1px #ccc solid;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0px 0px 10px 10px;
+    background: linear-gradient(to top, #FFFFFF 0px, #eee 15%, #FFFFFF 100%) no-repeat;
+    color: #D00;
+    padding-bottom: 20px;
+}
+
+
+
 #turnsCounter {
 	text-align: center;
 	position: relative;
@@ -39,17 +99,18 @@
 	height: 16px;
 	background: linear-gradient(to right, #33FF0B 0px, #009307 20%, #009307 75%, #2ACE01 90%) no-repeat scroll 0% 0% transparent;
 }
+
+
+
+
 #variants{
 width: 700px;
 margin: 10px auto 0px;
 border: 1px solid #D2C45B;
 background: linear-gradient(to right top, #F2F1B1 0px, #EDDEA0 30%, #FBF4C5 60%) no-repeat scroll 0% 0% transparent;
 }
-.item{
-	display: inline-block;
-	float: left;
-	margin: 3px 10px;
-}
+
+
 .choise{
 	margin: 10px 15px;
 	padding: 5px 10px;
@@ -60,7 +121,6 @@ background: linear-gradient(to right top, #F2F1B1 0px, #EDDEA0 30%, #FBF4C5 60%)
 	transition: all 0.15s linear 0s;
 	color: #333;
 }
-
 .choise:hover{
 box-shadow: 0px 0px 5px #604E22;
 background: linear-gradient(to top, #eee 0px, #ddd 20%, #fff 100%) no-repeat scroll 0% 0% transparent;

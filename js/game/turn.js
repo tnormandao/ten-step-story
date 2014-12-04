@@ -1,50 +1,94 @@
 
 // Turn
 Game.turn = function(){
+        
+        if (Game.player.stat.health > 0){
+            
+            // start turn
+            var currentEvent = {};
+            var eCount = Game.event.list.length;
 
-	// start turn
-	var currentEvent = {};
-	var eCount = Game.event.list.length;
-	
-	function getRandomEvent(){
-		return Game.event.list[Math.floor(Math.random()*eCount)];
-	}
+            function getRandomEvent(){
+                    return Game.event.list[Math.floor(Math.random()*eCount)];
+            }
 
-	function setEvent(){
-		currentEvent = getRandomEvent();
-		if (!currentEvent.condition()){ console.log('try'); setEvent(); }
-	}
+            function setEvent(){
+                    currentEvent = getRandomEvent();
+                    if (!currentEvent.condition()){ 
+                        setEvent(); 
+                    } else if(!!currentEvent.condition()){
+                        currentEvent.visited = true;
+                    }
+            }
+            setEvent();
 
-	setEvent();
+            renderVariants(currentEvent.variants);
 
-	// appply turn
-	Game.event.curentVariants = [];
-	$('#variants').html('');
-	var nextVariant = 0;
+            App.story.turnheader(currentEvent.name);
+            App.story.tell(currentEvent.content);
 
-	for (var i = 0; i < currentEvent.variants.length; i++){
-		if(currentEvent.variants[i].condition()){
-			var variantToPush = {
-				id: nextVariant,
-				el: $('<div class="choise" data-variant="'+nextVariant+'" onclick="choiseVariant(this);">'+currentEvent.variants[i].content+'</div>'),
-				result: currentEvent.variants[i].result
-			};
-			$('#variants').append(variantToPush.el);
-			Game.event.curentVariants.push(variantToPush);
-			nextVariant += 1;
-		}
-	}
+            Game.inventoryDraw();
+            Game.statDraw();
+            Game.turnCounterDraw();
 
-	App.story(currentEvent.name);
-	App.story(currentEvent.content);
-	Game.inventoryDraw();
-	Game.statDraw();
-	Game.turnCounterDraw();
+            Game.turnCounter += 1;
 
-	Game.turnCounter += 1;
+        } else if (Game.player.stat.health <= 0){
+            
+            App.story.system('Кажется вам смертеьлно нездоорвится. вы буквально мертвы. Стоит быть аккуратнее в следующий раз.');
+            App.apply( 'variants', '<div class="choise" onclick="Game.restart()"> Попытать счастья снова</div>'); 
+            
+        };
+
 };
+
 Game.turnCounterDraw = function(){
 	$('#turnsCounter > .inner').css({
 		width: (Game.turnCounter * 10)
 	});
+}
+
+function restartGame(){
+    
+}
+
+function renderVariants(obj){
+    
+    // appply turn
+    Game.event.curentVariants = [];
+    $('#variants').html('');
+    var nxt = 0;
+    
+    for (var i = 0; i < obj.length; i++){
+            if(obj[i].condition()){
+                    var variantToPush = {
+                            id: nxt,
+                            el: App.templates.choise({
+                                id:nxt,
+                                content: obj[i].content}),
+                            result: obj[i].result
+                    };
+                    $('#variants').append(variantToPush.el);
+                    Game.event.curentVariants.push(variantToPush);
+                    nxt += 1;
+            }
+    }
+    
+}
+
+function choose(obj){
+    //if(!App.story.process){
+        var variant = $(obj).data().id;
+        var linkToVariant = getFromVariantList(variant);
+        linkToVariant.result();
+        Game.turn();
+    //}
+}
+
+function getFromVariantList(ID){
+	for(var i = 0; i < Game.event.curentVariants.length; i++){
+		if(Game.event.curentVariants[i].id === ID){
+			return Game.event.curentVariants[ID];
+		}
+	}
 }

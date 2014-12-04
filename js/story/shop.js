@@ -1,9 +1,8 @@
-﻿
-Game.event.Add({
+﻿Game.event.Add({
 	name: 'Встреча с купцом',
 	content: ' Купец особенно полезен если у вас есть деньги.',
 	condition: function(){ 
-		if (Game.inventory.money >= 30 ){ return true }
+		return true;
 	},
 	variants: [
 		{
@@ -14,7 +13,7 @@ Game.event.Add({
 			result:  function(){
 				Game.inventory.horse = false;
 				Game.inventory.moeny += 30;
-				App.apply('dialog', 'Вы продали лошадку, а ведь не очень-то и выгодно вышло, да?');
+				App.story.npc('Вы продали лошадку, а ведь не очень-то и выгодно вышло, да?');
 			}
 		},
 		{
@@ -25,7 +24,7 @@ Game.event.Add({
 			result:  function(){
 				Game.inventory.horse = true;
 				Game.inventory.money -= 50;
-				App.apply('dialog', 'Добротноо коняку прикупили, сослужит хорошую службу.');
+				App.story.npc('Добротноо коняку прикупили, сослужит хорошую службу.');
 			}
 		},
 		{
@@ -37,7 +36,7 @@ Game.event.Add({
 				Game.inventory.money -= 50;
 				var tmp = 5+Math.floor(Math.random()*10);
 				Game.player.stat.strength += tmp;
-				App.apply('dialog', 'вы купили эликсир силы. Он добавил вам '+ tmp + ' силы');
+				App.story.npc('вы купили эликсир силы. Он добавил вам '+ tmp + ' силы');
 			}
 		},
 		{
@@ -49,7 +48,7 @@ Game.event.Add({
 				Game.inventory.money -= 50;
 				var tmp = 5+Math.floor(Math.random()*10);
 				Game.player.stat.dexterity += tmp;
-				App.apply('dialog', 'вы купили эликсир ловкости. Он добавил вам '+ tmp + ' ловкости');
+				App.story.npc('вы купили эликсир ловкости. Он добавил вам '+ tmp + ' ловкости');
 			}
 		},
 		{
@@ -61,7 +60,7 @@ Game.event.Add({
 				Game.inventory.money -= 50;
 				var tmp = 5+Math.floor(Math.random()*10);
 				Game.player.stat.intelligence += tmp;
-				App.apply('dialog', 'вы купили эликсир интеллекта. Он добавил вам '+ tmp + ' интеллекта');
+				App.story.npc('вы купили эликсир интеллекта. Он добавил вам '+ tmp + ' интеллекта');
 			}
 		},
 		{
@@ -72,7 +71,7 @@ Game.event.Add({
 			result:  function(){
 				Game.inventory.goose = true;
 				Game.inventory.money -= 30;
-				console.log('Купить гуся');
+				App.story.npc('Купить гуся');
 			}
 		},
 		{
@@ -81,7 +80,7 @@ Game.event.Add({
 				if(Game.player.stat.intelligence > 15){ return true}
 			},
 			result:  function(){
-				console.log('Выторговать сапоги бесплатно');
+				App.story.npc('Выторговать сапоги бесплатно');
 			}
 		}
 	]

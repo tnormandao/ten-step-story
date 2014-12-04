@@ -17,12 +17,6 @@
         <script type="text/javascript" src="js/game.js"></script>
  
 
-        <!--script type="text/javascript" src="js/story/stone.js"></script>
-        <script type="text/javascript" src="js/story/shop.js"></script>
-        <script type="text/javascript" src="js/story/dragon.js"></script>
-        <script type="text/javascript" src="js/story/sphinx.js"></script>
-        <script type="text/javascript" src="js/story/tavern.js"></script-->
-
     </head>
     <body>
         
@@ -43,23 +37,19 @@
 
 
         <!-- templates -->
-        <script type="text/template" class="gui-template" data-name="startScreen">
-	        <% if (typeof(title ) != "undefined") { %> 
-	            <h1> <%= title %> </h1> 
-	        <% } %>
-
-	        <% if (typeof(content ) != "undefined") { %> 
-	            <div> <%= content %> </div>
-	        <% } %>
-        </script>
-
-
         <script type="text/template" class="gui-template" data-name="choise">
-	        <% if (typeof(content ) != "undefined") { %> 
-	            <div> <%= content %> </div> 
-	        <% } %>
+            <div class="choise" data-id="<%= id %>" onclick="choose(this);">
+               <%= content %>
+            </div>
         </script>
 
+        <script type="text/template" class="gui-template" data-name="story">
+            <div  class="story-item <%= style %>"> <%= content %> </div>
+        </script>
+        
+        <script type="text/template" class="gui-template" data-name="turnNext">
+            <div  class="choise" onclick="Game.turn()"> <%= content %> </div>
+        </script>
 
         <script type="text/template" class="gui-template" data-name="item"> 
             <div class="item">
@@ -83,6 +73,12 @@
         <script type="text/javascript" src="js/game/npc.js"></script>
         <script type="text/javascript" src="js/game/event.js"></script>
         <script type="text/javascript" src="js/game/turn.js"></script>
+        
         <script type="text/javascript" src="js/story/cat.js"></script>
+        <script type="text/javascript" src="js/story/shop.js"></script>
+        <!--script type="text/javascript" src="js/story/stone.js"></script>
+        <script type="text/javascript" src="js/story/dragon.js"></script>
+        <script type="text/javascript" src="js/story/sphinx.js"></script>
+        <script type="text/javascript" src="js/story/tavern.js"></script-->
     </body>
 </html>
