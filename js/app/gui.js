@@ -17,7 +17,7 @@ App.story = {
             'slow', function(){
                     el.animate({
                         opacity: 1
-                    }, 1550, function() {
+                    }, 800, function() {
                         App.story.log.push({
                                 id: App.story.log.length,
                                 el: el,

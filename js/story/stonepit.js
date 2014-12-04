@@ -1,5 +1,5 @@
 ﻿Game.scene.Add({
-	name: 'Дракон',
+	name: 'Каменоломня',
 	content: ' Дефолтный текст, описывающий сцену, появляется в первый раз.',
 	condition: function(){ 
                 if(this.visited){

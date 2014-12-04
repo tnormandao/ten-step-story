@@ -14,7 +14,7 @@ Game.turn = function(){
 
             function setScene(){
                     currentScene = getRandomScene();
-                    if (!currentScene.condition()){ 
+                    if (!currentScene.condition() || currentScene.skip){ 
                         setScene(); 
                     } else if(!!currentScene.condition()){
                         currentScene.visited += 1;
