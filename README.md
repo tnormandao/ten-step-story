@@ -7,4 +7,4 @@ js text rpg with random generated situation
 
 Мы с товарищем решили устроить соревнование на предмет создания небольшой игры. И мне в голову пришла такая вот идея.
 
-test test test
+another test
