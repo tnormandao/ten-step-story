@@ -20,3 +20,13 @@ Game.npc.cat = Game.npc.create({
 Game.npc.dragon = Game.npc.create({
 	wings: true
 });
+
+
+// Dragon
+Game.npc.sphinx = Game.npc.create({
+	question: [
+		{
+			content: 'первая загадка сфинкса'
+		}
+	]
+});
