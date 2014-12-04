@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ten steps story</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" type="text/css" href="css/style.css" />
+        
+        <!-- Vendor -->
+        <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script src="js/underscore.js" type="text/javascript"></script>
+        <script src="js/backbone.js" type="text/javascript"></script>
+        <script src="js/backbone.localStorage.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/controller.js"></script>
+
+        <script type="text/javascript" src="js/game.js"></script>
+        
+        <script type="text/javascript" src="js/events.js"></script>
+
+        <script type="text/javascript" src="js/story/cat.js"></script>
+
+        <!--script type="text/javascript" src="js/story/stone.js"></script>
+        <script type="text/javascript" src="js/story/shop.js"></script>
+        <script type="text/javascript" src="js/story/dragon.js"></script>
+        <script type="text/javascript" src="js/story/sphinx.js"></script>
+        <script type="text/javascript" src="js/story/tavern.js"></script-->
+
+    </head>
+    <body>
+        
+        <div class="wrapper">
+            <div class="inventory"></div>
+            <div class="stat"></div>
+    		<div id="monitor">
+                <div id="story">
+                    
+                </div>   
+            </div>
+            <div id="turnsCounter">
+                до конца игры осталось
+                <div class="inner"></div>
+            </div>
+            <div id="variants"></div>
+        </div>
+
+
+        <!-- templates -->
+        <script type="text/template" class="gui-template" data-name="startScreen">
+	        <% if (typeof(title ) != "undefined") { %> 
+	            <h1> <%= title %> </h1> 
+	        <% } %>
+
+	        <% if (typeof(content ) != "undefined") { %> 
+	            <div> <%= content %> </div>
+	        <% } %>
+        </script>
+
+
+        <script type="text/template" class="gui-template" data-name="choise">
+	        <% if (typeof(content ) != "undefined") { %> 
+	            <div> <%= content %> </div> 
+	        <% } %>
+        </script>
+
+
+        <script type="text/template" class="gui-template" data-name="item"> 
+            <div class="item">
+                <% if (typeof(title ) !== "undefined") { %> 
+                    <b><%= title %></b> 
+                <% } %> 
+                <% if (typeof(content ) !== "undefined") { %> 
+                    : <%= content %>
+                <% } %>
+            </div> 
+        </script>
+
+
+        <script type="text/javascript" src="js/gui.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,72 @@
+.wrapper{
+	width:700px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.inventory{
+	display: inline-block;
+	float: left;
+	clear: left;
+}
+.stat{
+	display: inline-block;
+	float: left;
+	clear: left;
+}
+#monitor{
+	clear: left;
+	padding: 5px;
+	margin-top: 10px;
+	border:1px solid #D7D7D7;
+	background:linear-gradient(to top, #DFDFDF 0px, #F5F5F5 30%, #fff 60%) no-repeat;
+}
+#story{
+	width: 50%;
+	max-height: 250px;
+	overflow-y: scroll; 
+}
+#turnsCounter {
+	text-align: center;
+	position: relative;
+	height: 20px;
+	border: 1px solid #CCC;
+	background: linear-gradient(to bottom, #FFF 0px, #E4E4E4 30%, #F3F3F3 60%) no-repeat scroll 0% 0% transparent;
+}
+#turnsCounter .inner{
+	position: absolute;
+	top: 0px;
+	margin: 2px 0px;
+	height: 16px;
+	background: linear-gradient(to right, #33FF0B 0px, #009307 20%, #009307 75%, #2ACE01 90%) no-repeat scroll 0% 0% transparent;
+}
+#variants{
+width: 700px;
+margin: 10px auto 0px;
+border: 1px solid #D2C45B;
+background: linear-gradient(to right top, #F2F1B1 0px, #EDDEA0 30%, #FBF4C5 60%) no-repeat scroll 0% 0% transparent;
+}
+.item{
+	display: inline-block;
+	float: left;
+	margin: 3px 10px;
+}
+.choise{
+	margin: 10px 15px;
+	padding: 5px 10px;
+	border: 1px solid #8A9B69;
+	border-radius: 3px;
+	cursor: pointer;
+	background: linear-gradient(to top, #eee 0px, #ddd 40%, #fff 90%) no-repeat scroll 0% 0% transparent;
+	transition: all 0.15s linear 0s;
+	color: #333;
+}
+
+.choise:hover{
+box-shadow: 0px 0px 5px #604E22;
+background: linear-gradient(to top, #eee 0px, #ddd 20%, #fff 100%) no-repeat scroll 0% 0% transparent;
+}
+
+.choise:active{
+	box-shadow: 0px 0px 2px #604E22;
+	background:linear-gradient(to top, #eee 0px, #ddd 40%, #fff 100%) no-repeat;
+}
