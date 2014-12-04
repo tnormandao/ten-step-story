@@ -1,10 +1,10 @@
 // inventory
 Game.inventory = {
 		horse: false,
-		money: 150,
-		arrovs: 10,
 		goose: false,
-		boots: false
+		boots: false,
+		money: 220,
+		arrovs: 0
 };
 Game.inventoryDraw = function(){
 	var el = $('.inventory');

@@ -1,22 +1,26 @@
 .wrapper{
-	width:700px;
+	width:920px;
 	margin: 0 auto;
 	margin-top: 10px;
 }
 .inventory{
-	display: inline-block;
-	float: left;
-	clear: left;
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    clear: left;
+    border: 1px #eee solid;
 }
 .item{
-	display: inline-block;
-	float: left;
-	margin: 3px 10px;
+    display: inline-block;
+    float: left;
+    margin: 3px 10px;
 }
 .stat{
-	display: inline-block;
-	float: left;
-	clear: left;
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    clear: left;
+    border: 1px #eee solid;
 }
 
 #monitor{
@@ -53,10 +57,10 @@ background: linear-gradient(to top, #ECEDE8 0px, #EFF5DD 50%, #F2F2E4 80%) no-re
     text-align: center;
     border: 1px #ccc solid;
     border-width: 1px 1px 0px 1px;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
     color: #A85F19;
     text-shadow: 0px 1px 0px #fff;
-    background: linear-gradient(to top, #FFFFFF 0px, #DBDBAE 15%, #FFFFFF 100%) no-repeat;
+    background: linear-gradient(to top, #D5D5D5 0px, #EDEDED 3%, #FFFFFF 100%) no-repeat;
 }
 .story-item.tell{
     border: 1px #ccc solid;
@@ -70,14 +74,14 @@ background: linear-gradient(to top, #ECEDE8 0px, #EFF5DD 50%, #F2F2E4 80%) no-re
 .story-item.npc{
     border: 1px #ccc solid;
     border-width: 0px 1px 1px 1px;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 3px 3px;
     background: linear-gradient(to top, #FFFFFF 0px, #eee 15%, #FFFFFF 100%) no-repeat;
     padding-bottom: 20px;
 }
 .story-item.damage{
     border: 1px #ccc solid;
     border-width: 0px 1px 1px 1px;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 3px 3px;
     background: linear-gradient(to top, #FFFFFF 0px, #eee 15%, #FFFFFF 100%) no-repeat;
     color: #D00;
     padding-bottom: 20px;

@@ -1,4 +1,4 @@
-﻿Game.event.Add({
+﻿Game.scene.Add({
 	name: 'Встреча с котом',
 	content: ' Кот, это такое пушистое животное. У вас как раз есть возможность пообщаться с одним из самых ярких предсатвителей семейства кошачих — с котом.',
 	condition: function(){ 
@@ -42,23 +42,43 @@
 				if(Game.player.stat.intelligence > 10){ return true}
 			},
 			result:  function(){
-				if(Game.player.stat.health >= 40){
-					Game.player.stat.health -= 40;
-					Game.npc.cat.loyalty -= 5;
-					App.story.damage('Кота не обманешь! Он выцарапал вам глаз и нассал на ногу.');
+                            
+                                var damage = Game.action.damage(40);
+                                    console.log(damage);
+				if(Game.player.stat.health > 0){
+					Game.npc.cat.loyalty = -5;
+					App.story.damage('Вы попытались обмануть кота, но кот быстро раскрыл ваши планы. \n\
+                                                          Извернувшись он полоснул вас по лицу когтистой лапой, оставив вам на памяит \n\
+                                                          парочку глубоких шрамов. Будете знать, как обманывать кота. <br /> \n\
+                                                          кот нанес вам ' + damage + ' урона.');
 				} else {
-					App.story.damage('Кота не обманешь! Он выцарапал вам глаз и нассал на ногу. От чего вы скончались.');
+					Game.npc.cat.loyalty = -5;
+					App.story.damage('Эта встреча с котом окаалась для вас роковой. Кажется вам раньше уже \n\
+                                                            доводилось его разочаровывать. \n\
+                                                            но теперь вы не оставили ему выбора. Он приончил вас на месте как существо \n\
+                                                            не одстойное жить на этом свете.');
 				};
 			}
 		},
 		{
-			content: 'Погладить кота',
+			content: 'Погладить котаю',
+			condition: function(){ 
+                            if(Game.npc.cat.loyalty > 0){
+				return true;
+                            }
+			},
+			result:  function(){
+                            Game.npc.cat.loyalty += 3;
+                            App.story.npc('Кот отбросил прочь всю свою напыщенность и заурчал как котенок, когда вы почесали его шевелюру.');
+			}
+		},
+		{
+			content: 'Пройти мимо.',
 			condition: function(){ 
 				return true;
 			},
 			result:  function(){
-					Game.npc.cat.loyalty += 3;
-					App.story.npc('Кот отбросил прочь всю свою напыщенность и заурчал как котенок, когда вы почесали его шевелюру.');
+                            App.story.npc('Кот даже не обратил на вас внимания. Знаете как это бывает с котами? Они вас порой не замечают, даже если вы ну вот прямо у них под носом.');
 			}
 		}
 	]

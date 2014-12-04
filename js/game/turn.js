@@ -5,27 +5,27 @@ Game.turn = function(){
         if (Game.player.stat.health > 0){
             
             // start turn
-            var currentEvent = {};
-            var eCount = Game.event.list.length;
+            var currentScene = {};
+            var eCount = Game.scene.list.length;
 
-            function getRandomEvent(){
-                    return Game.event.list[Math.floor(Math.random()*eCount)];
+            function getRandomScene(){
+                    return Game.scene.list[Math.floor(Math.random()*eCount)];
             }
 
-            function setEvent(){
-                    currentEvent = getRandomEvent();
-                    if (!currentEvent.condition()){ 
-                        setEvent(); 
-                    } else if(!!currentEvent.condition()){
-                        currentEvent.visited = true;
+            function setScene(){
+                    currentScene = getRandomScene();
+                    if (!currentScene.condition()){ 
+                        setScene(); 
+                    } else if(!!currentScene.condition()){
+                        currentScene.visited += 1;
                     }
             }
-            setEvent();
+            setScene();
 
-            renderVariants(currentEvent.variants);
+            renderVariants(currentScene.variants);
 
-            App.story.turnheader(currentEvent.name);
-            App.story.tell(currentEvent.content);
+            App.story.turnheader(currentScene.name);
+            App.story.tell(currentScene.content);
 
             Game.inventoryDraw();
             Game.statDraw();
@@ -34,8 +34,7 @@ Game.turn = function(){
             Game.turnCounter += 1;
 
         } else if (Game.player.stat.health <= 0){
-            
-            App.story.system('Кажется вам смертеьлно нездоорвится. вы буквально мертвы. Стоит быть аккуратнее в следующий раз.');
+            App.story.system('<br/>Кажется вам смертеьлно нездоровится. вы буквально мертвы. Стоит быть аккуратнее в следующий раз.');
             App.apply( 'variants', '<div class="choise" onclick="Game.restart()"> Попытать счастья снова</div>'); 
             
         };
@@ -48,14 +47,14 @@ Game.turnCounterDraw = function(){
 	});
 }
 
-function restartGame(){
-    
+Game.restart = function(){
+   location.reload();
 }
 
 function renderVariants(obj){
     
     // appply turn
-    Game.event.curentVariants = [];
+    Game.scene.curentVariants = [];
     $('#variants').html('');
     var nxt = 0;
     
@@ -69,7 +68,7 @@ function renderVariants(obj){
                             result: obj[i].result
                     };
                     $('#variants').append(variantToPush.el);
-                    Game.event.curentVariants.push(variantToPush);
+                    Game.scene.curentVariants.push(variantToPush);
                     nxt += 1;
             }
     }
@@ -86,9 +85,9 @@ function choose(obj){
 }
 
 function getFromVariantList(ID){
-	for(var i = 0; i < Game.event.curentVariants.length; i++){
-		if(Game.event.curentVariants[i].id === ID){
-			return Game.event.curentVariants[ID];
+	for(var i = 0; i < Game.scene.curentVariants.length; i++){
+		if(Game.scene.curentVariants[i].id === ID){
+			return Game.scene.curentVariants[ID];
 		}
 	}
 }

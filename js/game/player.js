@@ -1,10 +1,12 @@
 // Player	
 Game.player.stat = {
 			health: 100,
-			strength: 10,
-			dexterity: 10,
-			intelligence: 10
+			strength: 5,
+			dexterity: 5,
+			defence: 2,
+			intelligence: 5
 };
+
 Game.statDraw = function(){
 	var el = $('.stat');
 		el.html(' ');
