@@ -5,3 +5,5 @@ App._u.templatesGet = function(){
 	});
 }
 App._u.templatesGet();
+
+// test
