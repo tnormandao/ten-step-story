@@ -7,8 +7,9 @@ Game.inventory = {
 		arrovs: 0
 };
 Game.inventoryDraw = function(){
-	var el = $('.inventory');
-		el.html(' ');
+    
+	var el = $('.inventory').html(' ');
+        
 	for(var key in Game.inventory){
 		if(!!Game.inventory[key]){
 			if (Game.inventory[key] === true) {

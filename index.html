@@ -24,12 +24,13 @@
     <body>
         
         <div class="wrapper">
-            <div class="stat"></div>
-            <div class="inventory"></div>
+            <div class="menu"></div>
+            <ul class="sidebar stat"></ul>
+            <ul class="sidebar inventory"></ul>
             <div id="monitor">
                 <div id="story"></div>   
             </div>
-            <div id="turnsCounter">
+            <div style="display: none;" id="turnsCounter">
                 <div class="inner"></div>
             </div>
             <div id="variants"></div>
@@ -51,14 +52,9 @@
         </script>
 
         <script type="text/template" class="gui-template" data-name="item"> 
-            <div class="item">
-                <% if (typeof(title ) !== "undefined") { %> 
-                    <b><%= title %></b> 
-                <% } %> 
-                <% if (typeof(content ) !== "undefined") { %> 
-                    : <%= content %>
-                <% } %>
-            </div> 
+            <li class="item">
+                <b><%= title %></b> <%= content %>
+            </li> 
         </script>
 
         <!--App-->
@@ -107,9 +103,5 @@
         <script type="text/javascript" src="js/story/sunset.js"></script>
         <script type="text/javascript" src="js/story/tavern.js"></script>
         <script type="text/javascript" src="js/story/wizard.js"></script>
-        <!--script type="text/javascript" src="js/story/stone.js"></script>
-        <script type="text/javascript" src="js/story/dragon.js"></script>
-        <script type="text/javascript" src="js/story/sphinx.js"></script>
-        <script type="text/javascript" src="js/story/tavern.js"></script-->
     </body>
 </html>
