@@ -41,7 +41,7 @@
 			result:  function(){
 				Game.item.horse.put('player');
 				Game.item.money.dec( Game.action.buy(50) );
-				App.story.npc('Добротноо коняку прикупили, сослужит хорошую службу.');
+				App.story.npc('Добротноо коняку прикупили, сослужит хорошую службу.', Game.item.horse.image);
 			}
 		},
 		{
@@ -96,7 +96,7 @@
 			result:  function(){
 				Game.item.money.dec( Game.action.buy(30) );
 				Game.item.goose.put('player');
-				App.story.npc(' Вы купили чудесного гуся. Его до последнего перышка вы запихнули в сумку, до лучших времен.');
+				App.story.npc(' Вы купили чудесного гуся. Его до последнего перышка вы запихнули в сумку, до лучших времен.', Game.item.goose.image);
 			}
 		},
 		{
@@ -109,7 +109,7 @@
 			result:  function(){
 				Game.item.money.dec( Game.action.buy(20) );
 				Game.item.club.put('player');
-				App.story.npc(' Вы купили отличную дубину о кованных кольцах. С такой не страшно даже в довольно темном лесу.');
+				App.story.npc(' Вы купили отличную дубину о кованных кольцах. С такой не страшно даже в довольно темном лесу.', Game.item.club.image);
 			}
 		},
 		{
@@ -122,7 +122,7 @@
 			result:  function(){
 				Game.item.boots.put('player');
 				Game.item.money.dec( Game.action.buy(30) );
-				App.story.npc('Вы пиобрели отличные сапоги. Вы обязательно их одели бы, если бы на вас уже не было других. Отличные сапоги отправляются в сумку.');
+				App.story.npc('Вы пиобрели отличные сапоги. Вы обязательно их одели бы, если бы на вас уже не было других. Отличные сапоги отправляются в сумку.', Game.item.boots.image);
 			}
 		}
 	]

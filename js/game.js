@@ -43,3 +43,10 @@ Game.Complete.item = function(content){
       };
   };
 };
+
+Game.Complete.image = function(content, category){
+  return new function(){
+      _.extend(this, content);
+      this.image = this.image ? ('img/'+ category + '/' + this.image + '.png') : 'img/default.png' ;
+  };
+};

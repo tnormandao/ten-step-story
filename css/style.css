@@ -65,10 +65,8 @@
     display: list-item;
     opacity: 1;
 }
-
 .inventory{ left: 0px; }
 .stat{ right: 0px; }
-
 #monitor{
   position: relative;
   clear: left;
@@ -125,10 +123,8 @@
     border-width: 0px 1px 0px 1px;
     background: #FFFFFF;
 }
-.story-item.get{
-}
-.story-item.loose{
-}
+.story-item.get{}
+.story-item.loose{}
 .story-item.npc{
     border: 1px #ccc solid;
     border-width: 0px 1px 1px 1px;
@@ -144,9 +140,6 @@
     color: #D00;
     padding-bottom: 20px;
 }
-
-
-
 #turnsCounter {
 	text-align: center;
 	position: relative;

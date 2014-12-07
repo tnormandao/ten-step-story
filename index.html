@@ -53,6 +53,14 @@
             <div  class="story-item <%= style %>"> <%= content %> </div>
         </script>
         
+        <script type="text/template" class="gui-template" data-name="storyImg">
+            <div  class="story-item <%= style %>"> 
+              <%= content %>
+              <br />
+              <img src="<%= src %>"/>
+            </div>
+        </script>
+        
         <script type="text/template" class="gui-template" data-name="turnNext">
             <div  class="choise" onclick="Game.turn()"> <%= content %> </div>
         </script>

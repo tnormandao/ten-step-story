@@ -5,6 +5,7 @@ Game.item.add = function(content){
 
       var content = Game.Complete.item(content);
       var content = Game.Complete.amount(content);
+      var content = Game.Complete.image(content, 'item');
       
       Game.item[content.id] = content;
     }
@@ -30,6 +31,7 @@ Game.item.draw = function(){
 
 Game.item.add({
   id: 'money',
+  image: 'money',
   name: 'деньги',
   amount: 100,
   owner: 'player',
@@ -38,6 +40,7 @@ Game.item.add({
 
 Game.item.add({
   id: 'horse',
+  image: 'horse',
   name: 'лошадь',
   status: 'имеется',
   owner: 'shop',
@@ -46,6 +49,7 @@ Game.item.add({
 
 Game.item.add({
   id: 'club',
+  image: 'club',
   name: 'дубинка',
   status: 'за плечом',
   owner: 'shop',
@@ -54,6 +58,7 @@ Game.item.add({
 
 Game.item.add({
   id: 'boots',
+  image: 'boots',
   name: 'сапоги',
   status: 'на ногах',
   owner: 'shop',
@@ -62,6 +67,7 @@ Game.item.add({
 
 Game.item.add({
   id: 'arrows',
+  image: 'arrows',
   name: 'стрелы',
   amount: 0,
   owner: 'player',
@@ -70,6 +76,7 @@ Game.item.add({
 
 Game.item.add({
   id: 'goose',
+  image: 'goose',
   name: 'гусь',
   status: 'в сумке',
   owner: 'pesant',
