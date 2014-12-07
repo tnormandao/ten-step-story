@@ -25,8 +25,14 @@
         
         <div class="wrapper">
             <div class="menu"></div>
-            <ul class="sidebar stat"></ul>
-            <ul class="sidebar inventory"></ul>
+            <div class="sidebar stat">
+              <h3>характеристики</h3>
+              <ul></ul>
+            </div>
+            <div class="sidebar inventory">
+              <h3>сумка</h3>
+              <ul></ul>
+            </div>
             <div id="monitor">
                 <div id="story"></div>   
             </div>
@@ -52,7 +58,7 @@
         </script>
 
         <script type="text/template" class="gui-template" data-name="item"> 
-            <li class="item">
+            <li class="item" title="<%= description %>">
                 <b><%= title %></b> <%= content %>
             </li> 
         </script>
@@ -71,10 +77,16 @@
         <script type="text/javascript" src="js/game/action.js"></script>
         <script type="text/javascript" src="js/game/turn.js"></script>
         
+        
+        
         <!-- load Scenes -->
+        
+        <script type="text/javascript" src="js/story/cat.js"></script>
+        <script type="text/javascript" src="js/story/shop.js"></script>
+        
+<!--        
         <script type="text/javascript" src="js/story/bastard.js"></script>
         <script type="text/javascript" src="js/story/camp.js"></script>
-        <script type="text/javascript" src="js/story/cat.js"></script>
         <script type="text/javascript" src="js/story/cave.js"></script>
         <script type="text/javascript" src="js/story/cheshir.js"></script>
         <script type="text/javascript" src="js/story/crossing.js"></script>
@@ -95,7 +107,6 @@
         <script type="text/javascript" src="js/story/roach.js"></script>
         <script type="text/javascript" src="js/story/schuka.js"></script>
         <script type="text/javascript" src="js/story/sevengnome.js"></script>
-        <script type="text/javascript" src="js/story/shop.js"></script>
         <script type="text/javascript" src="js/story/sphinx.js"></script>
         <script type="text/javascript" src="js/story/stone.js"></script>
         <script type="text/javascript" src="js/story/stonepit.js"></script>
@@ -103,5 +114,6 @@
         <script type="text/javascript" src="js/story/sunset.js"></script>
         <script type="text/javascript" src="js/story/tavern.js"></script>
         <script type="text/javascript" src="js/story/wizard.js"></script>
+        -->
     </body>
 </html>

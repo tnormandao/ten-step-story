@@ -1,32 +1,13 @@
 // NPCs
-Game.npc.create = function(obj){
-	return new function(){
-		this.loyalty = 0;
-		this.health = 100;
-		for(var key in obj){
-			this[key] = obj[key];
-		}
-	}
-}
+Game.npc.add = function (content){
+    if(!Game.npc[content.id]){
+        content.health = Game.Complete.amount(content.health);
+        content.loyalty = Game.Complete.amount(content.loyalty);
+        Game.npc[content.id] = content;
+    }
+};
 
 // Cat
-Game.npc.cat = Game.npc.create({
-	horse: false,
-	boots: false,
-	hat: false
-});
-
-// Dragon
-Game.npc.dragon = Game.npc.create({
-	wings: true
-});
-
-
-// Dragon
-Game.npc.sphinx = Game.npc.create({
-	question: [
-		{
-			content: 'первая загадка сфинкса'
-		}
-	]
-});
+Game.npc.add ({ id: 'cat' });
+Game.npc.add ({ id: 'dragon' });
+Game.npc.add ({ id: 'sphinx' });

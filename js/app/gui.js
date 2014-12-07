@@ -42,3 +42,6 @@ App.story = {
     npc: function(content){
         this.draw('npc', content); }
 };
+
+$(function(){
+});

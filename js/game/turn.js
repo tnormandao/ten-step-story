@@ -2,7 +2,7 @@
 // Turn
 Game.turn = function(){
         
-        if (Game.player.stat.health > 0){
+        if (Game.player.stat.health.get() > 0){
             
             // start turn
             var currentScene = {};
@@ -27,13 +27,13 @@ Game.turn = function(){
             App.story.turnheader(currentScene.name);
             App.story.tell(currentScene.content);
 
-            Game.inventoryDraw();
-            Game.statDraw();
+            Game.item.draw();
+            Game.player.stat.draw();
             Game.turnCounterDraw();
 
             Game.turnCounter += 1;
 
-        } else if (Game.player.stat.health <= 0){
+        } else if (Game.player.stat.health.get() <= 0){
             App.story.system('<br/>Кажется вам смертеьлно нездоровится. вы буквально мертвы. Стоит быть аккуратнее в следующий раз.');
             App.apply( 'variants', '<div class="choise" onclick="Game.restart()"> Попытать счастья снова</div>'); 
             
@@ -45,11 +45,11 @@ Game.turnCounterDraw = function(){
 	$('#turnsCounter > .inner').css({
 		width: (Game.turnCounter * 10)
 	});
-}
+};
 
 Game.restart = function(){
    location.reload();
-}
+};
 
 function renderVariants(obj){
     
