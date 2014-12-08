@@ -27,20 +27,33 @@ Game.Complete.item = function(content){
   return new function(){
       _.extend(this, content);
       this.status = this.status ? this.status : false ;
+      
+      this.owner = this.owner ? this.owner : 'destiny';
       this.own = function(owner) { 
-        if (this.owner === owner){
-          return true;
-        } else {
-          return false;
-        }
+          if (this.owner === owner){
+            return true;
+          } else {
+            return false;
+          }
       };
       this.put = function(owner){  
-        if(!!owner){ 
-          this.owner = owner; 
-        } else {
-          return this.owner;
-        }   
+          if(!!owner){ 
+            this.owner = owner; 
+          } else {
+            return this.owner;
+          }   
       };
+      
+      this.durability = this.durability ? this.durability : 100;
+      this.repair = function(num){ this.durability += num; };
+      this.break = function(num){
+          if (this.durability >= num){
+            this.durability -= num;
+          } else {
+            this.durability = 0;
+          }
+      };
+      
   };
 };
 

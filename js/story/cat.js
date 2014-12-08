@@ -16,9 +16,7 @@
 		{
 			content: 'подарить коня коту',
 			condition: function(){ 
-                            if(Game.item.horse.own('player')){ 
-                                return true; 
-                            }
+                            return Game.item.horse.own('player');
 			},
 			result:  function(){
                             Game.item.horse.put('cat');

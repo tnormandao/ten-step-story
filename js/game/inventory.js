@@ -1,5 +1,4 @@
 // items
-Game.item = {};
 Game.item.add = function(content){
     if(!Game.item[content.id]){
 
@@ -23,11 +22,6 @@ Game.item.draw = function(){
         }
     }
 };
-
-
-
-
-
 
 Game.item.add({
   id: 'money',
