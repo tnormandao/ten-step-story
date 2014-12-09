@@ -24,22 +24,27 @@
     <body>
         
         <div class="wrapper">
-            <div class="menu"></div>
-            <div class="sidebar stat">
-              <h3>характеристики</h3>
-              <ul></ul>
+
+            <div class="left-side">
+                <div class="menu"></div>
+                <div class="sidebar stat">
+                  <h3>характеристики</h3>
+                  <ul></ul>
+                </div>
+                <div class="sidebar inventory">
+                  <h3>сумка</h3>
+                  <ul></ul>
+                </div>
+                <div id="monitor">
+                    <div id="story"></div>   
+                </div>
+                <div style="display: none;" id="turnsCounter">
+                    <div class="inner"></div>
+                </div>
             </div>
-            <div class="sidebar inventory">
-              <h3>сумка</h3>
-              <ul></ul>
+            <div class="right-side">
+                <div id="variants"></div>
             </div>
-            <div id="monitor">
-                <div id="story"></div>   
-            </div>
-            <div style="display: none;" id="turnsCounter">
-                <div class="inner"></div>
-            </div>
-            <div id="variants"></div>
         </div>
 
         <!-- templates -->
@@ -56,7 +61,6 @@
         <script type="text/template" class="gui-template" data-name="storyImg">
             <div  class="story-item <%= style %>"> 
               <%= content %>
-              <br />
               <img src="<%= src %>"/>
             </div>
         </script>
