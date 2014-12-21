@@ -1,12 +1,13 @@
 // items
 Game.item.add = function(content){
+  
     if(!Game.item[content.id]){
-
-      var content = Game.Complete.item(content);
-      var content = Game.Complete.amount(content);
-      var content = Game.Complete.image(content, 'item');
       
-      Game.item[content.id] = content;
+        content = Game.Complete.item(content);
+        content = Game.Complete.amount(content);
+        content = Game.Complete.image(content, 'item');
+
+        Game.item[content.id] = content;
     }
 };
 

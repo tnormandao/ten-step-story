@@ -4,8 +4,8 @@ Game.player.stat.add = function(content){
   if(!Game.player.stat[content.id]){
     content.skip = false;
     
-    var content = Game.Complete.amount(content);
-    var content = Game.Complete.image(content, 'stat');
+    content = Game.Complete.amount(content);
+    content = Game.Complete.image(content, 'stat');
     
     Game.player.stat[content.id] = content;
   }
